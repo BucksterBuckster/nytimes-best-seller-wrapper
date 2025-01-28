@@ -20,9 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // provide api route file
-        Route::middleware('api')->prefix('api')->group(function () {
-            require base_path('routes/api.php');
-        });
+  
     }
 }

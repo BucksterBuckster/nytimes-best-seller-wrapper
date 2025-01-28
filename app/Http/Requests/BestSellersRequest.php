@@ -21,4 +21,4 @@ class BestSellersRequest extends FormRequest
             'offset' => 'sometimes|integer|min:0',
         ];
     }
-} 
+}

@@ -38,6 +38,13 @@ test('validates negative offset parameter', function () {
         ->assertJsonValidationErrors(['offset']);
 });
 
+test('validates non-integer offset parameter', function () {
+    $response = $this->getJson('/api/v1/nyt/best-sellers?offset=abc');
+
+    $response->assertStatus(422)
+        ->assertJsonValidationErrors(['offset']);
+});
+
 test('accepts valid offset parameter', function () {
     Http::fake([
         'api.nytimes.com/*' => Http::response([
