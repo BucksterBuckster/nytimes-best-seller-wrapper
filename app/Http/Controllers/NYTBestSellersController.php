@@ -12,7 +12,7 @@ class NYTBestSellersController extends Controller
         private NYTBestSellersService $nytService
     ) {}
 
-    public function index(BestSellersRequest $request): JsonResponse
+    public function __invoke(BestSellersRequest $request): JsonResponse
     {
 
         try {
